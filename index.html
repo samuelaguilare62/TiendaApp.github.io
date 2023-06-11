@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Subir Aplicaciones</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="toggle-button" onclick="toggleMenu()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+
+    <div class="menu-container">
+      <nav class="sticky-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#app-populares">App Populares</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+ 
+ <div class="popup-overlay" id="popupOverlay">
+   <div class="popup-content">
+     <h1>Subir Aplicaciones</h1>
+   <form id="app-form">
+     <label for="app-image">Imagen:</label>
+     <input type="file" id="app-image" accept="image/*" required><br><br>
+ 
+     <label for="app-file">Aplicación:</label>
+     <input type="file" id="app-file" accept=".apk,.ipa" required><br><br>
+ 
+     <label for="app-name">Nombre:</label>
+     <input type="text" id="app-name" required><br><br>
+ 
+     <label for="app-version">Versión:</label>
+     <input type="text" id="app-version" required><br><br>
+ 
+     <label for="app-tags">Etiquetas de búsqueda:</label>
+     <input type="text" id="app-tags" required><br><br>
+ 
+     <button type="submit">Subir Aplicación</button>
+   </form>
+   <br>
+<button id="closeButton">Cerrar</button>
+</div>
+</div>
+
+
+
+  <div id="app-list"></div>
+  
+    <a href="#" class="floating-button">+</a>
+
+  <script src="main.js"></script>
+  
+    <script src="https://kit.fontawesome.com/7bf7f5d5a4.js" crossorigin="anonymous"></script>
+</body>
+</html>

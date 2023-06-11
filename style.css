@@ -1,0 +1,308 @@
+/*.app-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.app-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.app-info {
+  flex-grow: 1;
+}
+
+.app-actions {
+  display: flex;
+  gap: 5px;
+}
+
+/* Estilos para los botones 
+.app-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.edit-button {
+  background-color: #337ab7;
+}
+
+.delete-button {
+  background-color: #d9534f;
+}
+
+.download-button {
+  background-color: #5cb85c;
+}*/
+
+body {
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #333;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-250px);
+}
+
+.menu-container.active {
+  transform: translateX(0);
+}
+
+.sticky-menu {
+  position: sticky;
+  top: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 50px 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+a:hover {
+  background-color: #555;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+}
+
+/* Estilos para dispositivos móviles */
+
+@media only screen and (max-width: 768px) {
+  .menu-container {
+    width: 50%;
+    height: 100%;
+  }
+  
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #337ab7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.app-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.app-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.app-info {
+  flex-grow: 1;
+}
+
+.app-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-button,
+.delete-button,
+.download-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+
+.edit-button {
+  background-color: #337ab7;
+}
+
+.delete-button {
+  background-color: #d9534f;
+}
+
+.download-button {
+  --background: #275efe;
+  --rectangle: #184fee;
+  --success: #4672f1;
+  --text: #000000;
+  --arrow: #000000;
+  --checkmark: #fff;
+  --shadow: rgba(10, 22, 50, .24);
+  display: flex;
+  overflow: hidden;
+  text-decoration: none;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  background: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px -1px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 4px -1px var(--shadow);
+}
+
+/* Estilos para el formulario emergente */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Transparencia de fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  /* Asegura que el formulario esté por encima del fondo oscuro */
+  display: none;
+  /* Inicialmente oculto */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+#closeButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #337ab7;
+  color: #fff;
+  cursor: pointer;
+}
+
+#closeButton:hover {
+  background-color: #23527c;
+}
+
+
+.floating-button {
+
+  /* Estilos anteriores... */
+  z-index: 9999;
+  /* Asegura que el botón flotante esté por encima de otros elementos */
+  position: fixed;
+  bottom: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #5cb85c;
+  color: #fff;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  left: calc(50% - 30px);
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .app-item {
+    flex-wrap: wrap;
+  }
+
+  .app-image {
+    margin-bottom: 10px;
+  }
+
+  .app-info {
+    flex-basis: 100%;
+  }
+
+  .app-actions {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .edit-button,
+  .delete-button,
+  .download-button {
+    padding: 3px 6px;
+  }
+}
